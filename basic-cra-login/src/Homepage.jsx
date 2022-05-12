@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 export const Homepage = () => {
-  const history = useHistory();
+  // const history = useHistory();
+  const navigate = useNavigate();
 
   const [formData, updateFormData] = useState({
     name: '',
@@ -16,7 +18,7 @@ export const Homepage = () => {
 
     if (name === 'Patricia' && password === 'parola') {
       alert('before routing');
-      history.push('/hello');
+      navigate('/hello');
 
       // routing merge - endpoint e schimbat;
       //dar nu reincarca componenta Hello
